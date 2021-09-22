@@ -1,0 +1,434 @@
+/* RESET CSS */
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, p, ul, li, a {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #181818;
+    color: #FEFBFB;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  button,
+  input {
+    border: 0;
+  }
+  button:focus,
+  input:focus {
+    border: 0;
+  }
+
+h1, h2, h3{
+  font-size: 1.2rem;
+}
+  /* Header */
+
+  header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 1rem;
+      background-color: #212121;
+  }
+
+  header .menu {
+      display: flex;
+      gap: 1rem;
+  }
+
+  header .menu .item a {
+    transition: 0.3s;
+    position: relative;
+
+  }
+  
+  header .menu .item a:hover {
+    color: #554BFF;
+    transition: color 0.3s;
+  }
+
+    /* pseudo elements */
+    header .menu .item a::after{
+        content: '';
+        display: flex;
+        width: 0%;
+        height: 0.125rem;
+        background: #554BFF;
+        margin: 0.5rem auto;
+        position: absolute;
+        left: 0;
+        transition: width 0.3s;
+    }
+
+
+    header .menu .item a:hover::after{
+        width: 100%;  
+    }
+
+  /* intro */
+
+  .container-intro {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      justify-content: center;
+  }
+
+  .container-text {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+
+  }
+
+  .container-text p {
+    font-size: 0.85rem;
+  }
+
+  .container-text button {
+      width: 5rem;
+      height: 2rem;
+      background-color:#554BFF;
+      text-align: center;
+      font-size: 0.6rem;
+  }
+
+  .container-text button:hover{
+    cursor: pointer;
+    transform: scale(1.05)
+  }
+
+  .container-image {
+    max-width: 18rem;
+  }
+
+  /* About */
+
+  .container-about {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      padding: 1rem;
+      margin: 3rem auto;
+  }
+
+  .container-about h1 {
+      margin-bottom: 0.75rem;
+  }
+
+  .container-about h1:after{
+    content: '';
+    display: flex;
+    
+    width: 4rem;
+    height: 0.15rem;
+    background: #554BFF;
+    margin: 0.2rem auto;
+  }
+
+  .container-about p {
+    letter-spacing: 0.025rem;
+  }
+
+  /* Services */
+
+  .container-services-skills{
+   
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .container-services {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      
+
+  }
+  .container-services  h1 {
+      margin: 0 auto;
+  }
+
+  
+
+  .services {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      padding: 1rem;
+      gap: 1rem;
+  }
+
+  .service{
+    background-color: #212121;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.15rem solid #554BFF;
+  }
+
+  .service img {
+      align-self: center;
+      max-width: 3rem;
+      filter: invert(100%);
+  }
+
+  /* Skills */
+
+  .container-skills {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 1rem auto;
+
+  }
+
+.container-skills h1 {
+    margin: 0 auto;
+}
+
+
+
+.skills{
+  display: flex;
+  margin: 0  auto;
+  gap: 1rem;
+
+}
+
+.container-skills .skill {
+  background-color: #212121;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.15rem solid #554BFF;
+}
+
+.container-skills  img {
+  align-self: center;
+  max-width: 3rem;
+  filter: invert(100%);
+}
+
+
+/* projects */
+
+
+.container-projects h1 {
+  text-align: center;
+  margin: 2rem auto;
+  
+
+}
+
+.list-projects{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item-project {
+  max-width: 15rem;
+  max-height: auto;
+  padding: 1rem;
+  background-color: #212121;
+  
+}
+
+.item-project:hover{
+  cursor: pointer;
+  transform: scale(1.1); /* Equal to scaleX(0.7) scaleY(0.7) */
+}
+
+.item-project span a {
+color: #554BFF;
+}
+
+/* Contacts */
+
+.container-contacts{
+  
+  margin: 5rem 0 5rem 0;
+}
+
+.container-contacts h1 {
+  text-align: center;
+  margin: 1rem auto;
+
+}
+
+
+
+.contacts{
+  display: flex;
+  gap: 1rem;
+}
+
+
+.contact {
+  background-color: #212121;
+  padding: 1rem;
+  border: 0.15rem solid #554BFF;
+  font-size: 0.5rem;
+  margin: 0 auto;
+  
+}
+
+.contact  img {
+  
+  max-width: 2rem;
+  filter: invert(100%);
+}
+
+/* footer and arrow */
+
+footer h2 {
+  margin: auto;
+  text-align: center;
+  background-color: #212121;
+  padding: 1rem;
+}
+
+
+.arrow-up {
+  background-color: #202020;
+  padding: 1rem;
+  font-size: 0.7rem;
+  clip-path: circle();
+  line-height: 0;
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  transition: background-color 0.5s;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+  transform: translateX(100%);
+}
+
+.arrow-up.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  
+}
+
+.arrow-up::after{
+  content: '';
+  color: #5429CF;
+}
+
+/* responsive */
+@media (min-width: 365px){
+  h1, h2, h3{
+    font-size: 1rem;
+  }
+
+  p{
+    font-size: 0.7rem;
+  }
+
+  /* about */
+  .container-about{
+    max-width: 30rem;
+    max-height: auto;
+    margin: 3rem auto;
+  } 
+/* services */
+  .container-services-skills {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  
+    margin: 1rem auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-skills, .container-services {
+    margin: 1rem auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* projects */
+
+  .item-project{
+  max-width: 15rem;
+  max-height: 10rem;
+  padding: 1rem;
+  background-color: #212121;
+  }
+
+  /* contacts */
+
+  .contacts{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin: 1rem auto;
+    padding: 2rem;
+  }
+  
+  
+  .contact {
+    background-color: #212121;
+    padding: 1rem;
+    border: 0.15rem solid #554BFF;
+    font-size: 0.5rem;
+    margin: 0;
+    max-height: 8rem;
+    max-width: 12rem;
+  }
+  
+  
+  .contact  img {
+    
+    max-width: 1.5rem;
+    filter: invert(100%);
+  }
+
+ 
+
+}
