@@ -5,6 +5,9 @@ Atualmente contem principios:
 - HTML
 - CSS 
 - Javascript
+- Responsividade
+
+
 
 https://marcoscantarutti.github.io/Portfolio/
 ----------------------------------
