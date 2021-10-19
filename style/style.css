@@ -39,6 +39,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  background-size: cover;
 }
 
 button,
@@ -102,7 +103,7 @@ header .menu .item a:hover::after {
 .container-intro {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   justify-content: center;
 }
 
@@ -115,6 +116,11 @@ header .menu .item a:hover::after {
 
 .container-text p {
   font-size: 0.85rem;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
 }
 
 .container-text button {
@@ -131,7 +137,8 @@ header .menu .item a:hover::after {
 }
 
 .container-image {
-  max-width: 18rem;
+  max-width: 15rem;
+  padding: 1rem;
 }
 
 /* About */
@@ -281,32 +288,62 @@ header .menu .item a:hover::after {
 /* Contacts */
 
 .container-contacts {
-  margin: 1rem auto;
-}
-
-.container-contacts h1 {
-  text-align: center;
-  margin: 1rem auto;
-}
-
-.contacts {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 0 auto;
 }
 
-.contact {
-  background-color: #212121;
+.container-contacts h1 {
+  align-self: center;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.contacts ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
   padding: 1rem;
+  margin: 1rem auto;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #212121;
   border: 0.15rem solid #554bff;
-  font-size: 0.5rem;
-  margin: 0 auto;
+  max-width: 18rem;
+  max-height: 20rem;
+  padding: 1rem;
+}
+
+.contact li h3 {
+  align-self: center;
 }
 
 .contact img {
-  max-width: 2rem;
+  width: 3rem;
+  height: 3rem;
+  align-self: center;
   filter: invert(100%);
+}
+
+.contacts li span {
+  font-size: 1rem;
+}
+
+.contacts li span:hover,
+.contacts li span a:hover {
+  transition: all 0.5s;
+  transform: scale(1.05);
+  color: #554bff;
+  cursor: pointer;
 }
 
 /* footer and arrow */
@@ -348,7 +385,86 @@ footer h2 {
   color: #5429cf;
 }
 
-/* responsive */
+/* Modal */
+
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  background: #212121;
+  padding: 4rem;
+  border: 10px solid #554bff;
+
+  position: relative;
+  width: 40rem;
+}
+
+.close {
+  position: absolute;
+  font-size: 1.2rem;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #fefbfb;
+  border-radius: 50%;
+  background: #554bff;
+  cursor: pointer;
+}
+
+.modal h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.modal label {
+  font-family: "DM Sans", sans-serif;
+  display: block;
+  font-weight: bold;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+}
+.modal #msg {
+  width: 25rem;
+  height: 10rem;
+}
+
+.modal input {
+  width: 70%;
+  padding: 0.7rem 0.5rem;
+  box-sizing: border-box;
+}
+
+.modal button[type="submit"] {
+  display: block;
+  background: #554bff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 2rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-container.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/************************************* responsive ******************************/
+
 @media (min-width: 585px) {
   h1,
   h2,
@@ -364,6 +480,11 @@ footer h2 {
   /* header */
   header .menu {
     display: flex;
+    gap: 5rem;
+  }
+
+  .container-intro {
+    margin: 0 auto;
     gap: 5rem;
   }
 
@@ -386,7 +507,8 @@ footer h2 {
   }
 
   .container-image {
-    max-width: 50rem;
+    max-width: 40rem;
+    padding: 2rem;
   }
 
   /* about */
@@ -418,11 +540,10 @@ footer h2 {
   /* services */
   .container-services-skills {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
 
     margin: 0 auto;
-    align-items: center;
     justify-content: center;
   }
 
@@ -430,6 +551,18 @@ footer h2 {
   .container-services {
     margin: 1rem auto;
     gap: 5rem;
+  }
+
+  .services,
+  .skills {
+    gap: 5rem;
+  }
+
+  .service {
+    border-bottom: 0.3rem solid #554bff;
+  }
+  .container-skills .skill {
+    border-bottom: 0.3rem solid #554bff;
   }
 
   .service img {
@@ -452,12 +585,15 @@ footer h2 {
 
   .list-projects {
     /* display: flex; */
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
-    /* gap: 5rem; */
-    /* max-width: auto; */
-    display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    /* gap: 2rem; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 55rem);
+    grid-auto-rows: 1fr;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
   }
   .item-project:hover {
@@ -468,7 +604,8 @@ footer h2 {
   .item-project {
     max-width: 40rem;
     max-height: 30rem;
-
+    align-self: center;
+    justify-self: center;
     padding: 2rem;
     background-color: #212121;
   }
@@ -484,47 +621,44 @@ footer h2 {
   /* contacts */
 
   .container-contacts {
-    padding: 1rem;
-    margin-top: 5rem;
+    margin: 10rem 0 10rem 0;
   }
 
-  .contacts {
+  .contacts ul {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 3rem;
-    margin: 1rem;
-    padding: 2rem;
-  }
-
-  .container-contacts h1 {
-    margin: 1rem;
+    justify-content: center;
+    gap: 5rem;
+    margin: 2rem auto;
   }
 
   .contact {
-    background-color: #212121;
+    max-width: 22rem;
+    max-height: 20rem;
     padding: 1rem;
-    border: 0.15rem solid #554bff;
-    font-size: 1.2rem;
-    margin: 0;
-    max-height: 10rem;
-    max-width: 20rem;
   }
 
-  .contact h3 {
+  .contact a,
+  .contact p {
     font-size: 1.3rem;
   }
 
-  .contact span a:hover {
-    cursor: pointer;
-    color: #554bff;
+  .contact li h3 {
+    align-self: center;
   }
 
   .contact img {
-    max-width: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+    align-self: center;
+    filter: invert(100%);
   }
 
+  /* footer */
+
+  footer h2 {
+    padding: 3rem;
+  }
   /* arrow */
 
   .arrow-up {
@@ -548,5 +682,84 @@ footer h2 {
 
   .arrow-up:hover {
     background-color: #554bff;
+  }
+
+  /* Modal */
+
+  .modal-container {
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal {
+    background: #212121;
+    padding: 4rem;
+    border: 10px solid #554bff;
+
+    position: relative;
+    width: 60rem;
+  }
+
+  .close {
+    position: absolute;
+    font-size: 1.2rem;
+    top: -30px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fefbfb;
+    border-radius: 50%;
+    background: #554bff;
+    cursor: pointer;
+  }
+
+  .modal h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .modal label {
+    font-family: "DM Sans", sans-serif;
+    display: block;
+    font-weight: bold;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+  }
+
+  .modal input {
+    width: 70%;
+    padding: 0.7rem 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .modal button[type="submit"] {
+    display: block;
+    background: #554bff;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+
+  .modal #msg {
+    width: 50rem;
+    height: 15rem;
+  }
+
+  .modal-container.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

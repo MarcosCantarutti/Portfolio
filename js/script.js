@@ -1,33 +1,11 @@
-// SmoothScrool
-initScrollSuave = () => {
-    const linksInternos = document.querySelectorAll('.item')
-
-    scrollToSection = event => {
-        event.preventDefault()
-        const href = event.target.getAttribute('href')
-        const section = document.querySelector(href)
-    
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-
-    }
-    linksInternos.forEach(link => {
-        link.addEventListener('click', scrollToSection)
-    })
-}
-initScrollSuave()
+import SmoothScrool from './modules/smoothScrool.js'
+import callModal from './modules/modal.js'
+import arrowUpFunc from './modules/arrowUp.js'
 
 
 
+SmoothScrool()
+arrowUpFunc()
+callModal()
 
-const arrowUp = document.querySelector('.arrow-up')
 
-window.addEventListener('scroll', () => {
-    if(window.scrollY >= 560){
-        arrowUp.classList.add('show')
-    } else {
-        arrowUp.classList.remove('show')
-    }
-})

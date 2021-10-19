@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <link href="./images/favicon.svg" rel="icon" type="image/x-icon" />
     <title>Marcos Cantarutti</title>
 </head>
 <body>
@@ -30,11 +31,14 @@
         <div class="container-text" >
             <h1>Marcos Cantarutti</h1>
             <p>Estudante de desenvolvimento Web | JavaScript </p>
-            <button><a href="./MarcosCantarutti-CV.pdf" download>Download CV</a></button>
+            <div class="buttons-container">
+                <button><a href="./MarcosCantarutti-CV.pdf" download>Download CV</a></button>
+                <button><a href="" data-mail="email">Fale Comigo!</a></button>
+            </div>
         </div>
 
         <div class="container-image">
-            <img src="./images/programmer.png" alt="">
+            <img src="./images/programmer.svg" alt="">
         </div>
     </section>
 
@@ -124,29 +128,57 @@
 
     <section class="container-contacts" id="contacts">
         <h1>Contato</h1>
-        <ul class="contacts">
-            <li class="contact">
-                <img src="./images/user.png" alt="Usuario">
-                <h3>Nome</h3>
-                <span>Marcos Cantarutti</span>
-            </li>
-            <li class="contact">
-                <img src="./images/mail.png" alt="Email">
-                <h3>E-mail</h3>
-                <span>marcossandim21@gmail.com</span>
-            </li>
-            <li class="contact">
-                <img src="./images/linkedin.png" alt="Linkedin">
-                <h3>Linkedin</h3>
-                <span><a href="https://www.linkedin.com/in/marcos-cantarutti/" target="_blank">marcos-cantarutti</a></span>
-            </li>
-            <li class="contact">
-                <img src="./images/github.png" alt="github">
-                <h3>Github</h3>
-                <span><a href="https://github.com/MarcosCantarutti" target="_blank">MarcosCantarutti</a></span>
-            </li>
-        </ul>
+        <div class="contacts">
+            <ul>
+                <li class="contact">
+                    <img src="./images/user.png" alt="Usuario">
+                    <h3>Nome</h3>
+                    <p>Marcos Cantarutti</p>
+                </li>
+                <li class="contact">
+                    <img src="./images/mail.png" alt="Email">
+                    <h3>Email</h3>
+                    <p>marcossandim21@gmail.com</p>
+                </li>
+                <li class="contact">
+                    <img src="./images/linkedin.png" alt="Linkedin">
+                    <h3>Linkedin</h3>
+                    <span><a href="https://www.linkedin.com/in/marcos-cantarutti/">marcos-cantarutti</a></span>
+                </li>
+                <li class="contact">
+                    <img src="./images/github.png" alt="github">
+                    <h3>Github</h3>
+                    <span><a href="https://github.com/MarcosCantarutti">MarcosCantarutti</a></span>
+                </li>
+            </ul>
+        </div>
+        
     </section>
+
+    <div class="modal-container" data-modal="container">
+        <div class="modal">
+            <button type="button" class="close" data-close="modal">X</button>
+            <h1>Fale comigo!</h1>
+            <form id="form" action="./sendMail.php" method="POST">
+                <div>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Nome"/>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail"/>
+                </div>
+                <div>
+                    <label for="msg" >Mensagem:</label>
+                    <textarea id="msg" rows="15" cols="90" name="msg" placeholder="Mensagem..."></textarea>
+                </div>
+                <div class="button-form">
+                    <button type="submit" data-button="button">Enviar</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
 
 
     <footer>
@@ -154,6 +186,6 @@
         <a href="#menu" class="item arrow-up">UP 🠕</a>
     </footer>
     
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
