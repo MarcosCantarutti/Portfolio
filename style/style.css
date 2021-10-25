@@ -584,17 +584,14 @@ footer h2 {
   }
 
   .list-projects {
-    /* display: flex; */
-    /* justify-content: space-around; */
-    /* gap: 2rem; */
-
     display: grid;
-    grid-template-columns: repeat(auto-fill, 55rem);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, 50rem);
+    grid-auto-rows: auto;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    width: 100%;
   }
   .item-project:hover {
     cursor: pointer;
@@ -602,8 +599,10 @@ footer h2 {
   }
 
   .item-project {
+    height: 20rem;
     max-width: 40rem;
     max-height: 30rem;
+    min-width: 29rem;
     align-self: center;
     justify-self: center;
     padding: 2rem;
