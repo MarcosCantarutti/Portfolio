@@ -534,7 +534,7 @@ footer h2 {
   }
 
   .container-about p {
-    letter-spacing: 0.05rem;
+    margin: 1.5rem auto
   }
 
   /* services */
