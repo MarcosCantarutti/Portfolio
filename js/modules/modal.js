@@ -16,8 +16,7 @@ export default function callModal () {
     }
     
     const callSubmit = event => {
-        event.preventDefault()
-        window.alert('Ainda não funcional =( ')
+        window.alert('Enviado! ')
     }
     
     buttonClose.addEventListener('click', toggleModal)
