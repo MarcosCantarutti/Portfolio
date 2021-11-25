@@ -171,14 +171,17 @@
         <div class="modal">
             <button type="button" class="close" data-close="modal">X</button>
             <h1>Fale comigo!</h1>
-            <form id="form" action="./sendMail.php" method="POST">
+            <form id="form" action="https://formsubmit.co/marcossandim21@gmail.com" method="POST">
                 <div>
                     <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" placeholder="Nome"/>
+                    <input type="text" id="name" name="name" placeholder="Nome" required/>
+                </div>
+                <div>
+                    <input type="text" name="_honey" style="display:none">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="E-mail"/>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required/>
                 </div>
                 <div>
                     <label for="msg" >Mensagem:</label>
