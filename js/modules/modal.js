@@ -15,13 +15,8 @@ export default function callModal () {
        clickedElement === containerModal || clickedElement === buttonSubmit  ? toggleModal(event) : null
     }
     
-    const callSubmit = event => {
-        window.alert('Enviado! ')
-    }
-    
     buttonClose.addEventListener('click', toggleModal)
     buttonForm.addEventListener('click', toggleModal)
-    buttonSubmit.addEventListener('click', callSubmit)
     containerModal.addEventListener('click', clickOutModal)
 }
 
