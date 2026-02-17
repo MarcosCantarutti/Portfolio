@@ -1,8 +1,10 @@
 <template>
   <button
     :class="[
-      'px-4 py-2 rounded text-white',
-      variant === 'primary' ?  'bg-gray-500 hover:bg-gray-600': 'bg-blue-500 hover:bg-blue-600' ,
+      'px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent',
+      variant === 'primary' 
+        ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:ring-purple-500 shadow-md hover:shadow-xl' 
+        : 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 focus:ring-pink-500 shadow-md hover:shadow-xl',
     ]"
     @click="$emit('click')"
   >
